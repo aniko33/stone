@@ -5,7 +5,7 @@ def chex(hex: str):
     return "\033[38;2;{};{};{}m".format(r,g,b)
 
 def cansi(color: int):
-    return "\033[38;5;{}".format(color)
+    return "\033[38;5;{}m".format(color)
 
 def ansistr(__str: str, color: int):
     return cansi(color) + __str + cansi(0)
