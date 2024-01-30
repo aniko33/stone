@@ -1,6 +1,7 @@
 # Messages
 
 The "messages" component of *Stone-color* from **printing and logging functions**, example of use:
+
 ```python
 from stone_color.messages import *
 
