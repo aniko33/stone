@@ -28,13 +28,13 @@ def infof(*objs, end="\n", start="", sep=" ", file=stdout, flush=False):
     if flush:
         file.flush()
 
-def greenf(*objs, end="\n", start="", sep=" ", file=stdout, flush=False):
+def successf(*objs, end="\n", start="", sep=" ", file=stdout, flush=False):
     file.write(start + _success + " " + sep.join(map(str, objs)) + end)
     if flush:
         file.flush()
     
 
-def redf(*objs, end="\n", start="", sep=" ", file=stdout, flush=False):
+def errorf(*objs, end="\n", start="", sep=" ", file=stdout, flush=False):
     file.write(start + _error + " " + sep.join(map(str, objs)) + end)
     if flush:
         file.flush()

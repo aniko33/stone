@@ -1,0 +1,7 @@
+site_name: Stone-color
+theme:
+  name: readthedocs
+
+nav:
+  - "index.md"
+  - "messages.md"
