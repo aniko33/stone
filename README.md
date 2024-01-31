@@ -3,7 +3,7 @@
 # Stone-Color
 [Installation](#installation) - [Quick usage](#quick-usage) - [Docs](https://stone-color.readthedocs.io/en/latest/) - [Contributors](#contributors)
 
-<img src=".img/logo.png" width=80%>
+<img src=".img/logo.png" width=40%>
 </div>
 
 # Installation
