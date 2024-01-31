@@ -1,4 +1,4 @@
-from sys import stdout
+from sys import stdout, stderr
 import re
 
 from . import color
@@ -13,28 +13,28 @@ _error = colors.red + "[-]" + colors.reset
 
 auto_reset = False
 
-def alertf(*objs, end="\n", sep=" ", file=stdout, flush=False):
+def alertf(*objs, end="\n", sep=" ", file=stderr, flush=False):
     file.write(_alert + " " + sep.join(map(str, objs)) + end)
     if flush:
         file.flush()
 
-def warnf(*objs, end="\n", start="", sep=" ", file=stdout, flush=False):
+def warnf(*objs, end="\n", start="", sep=" ", file=stderr, flush=False):
     file.write(start +_warn + " " + sep.join(map(str, objs)) + end)
     if flush:
         file.flush()
 
-def infof(*objs, end="\n", start="", sep=" ", file=stdout, flush=False):
+def infof(*objs, end="\n", start="", sep=" ", file=stderr, flush=False):
     file.write(start + _info + " " + sep.join(map(str, objs)) + end)
     if flush:
         file.flush()
 
-def successf(*objs, end="\n", start="", sep=" ", file=stdout, flush=False):
+def successf(*objs, end="\n", start="", sep=" ", file=stderr, flush=False):
     file.write(start + _success + " " + sep.join(map(str, objs)) + end)
     if flush:
         file.flush()
     
 
-def errorf(*objs, end="\n", start="", sep=" ", file=stdout, flush=False):
+def errorf(*objs, end="\n", start="", sep=" ", file=stderr, flush=False):
     file.write(start + _error + " " + sep.join(map(str, objs)) + end)
     if flush:
         file.flush()

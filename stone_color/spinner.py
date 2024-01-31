@@ -1,10 +1,13 @@
 from threading import Thread
+from dataclasses import dataclass
 import time
 
 from .messages import printf
 
-line_spinner = [r"|", "\\", "-", "/"]
-mark_spinner = ["#", "!", "?", "$", "&"]
+@dataclass
+class Spinners:
+    line_spinner = [r"|", "\\", "-", "/"]
+    mark_spinner = ["#", "!", "?", "$", "&"]
 
 class loadbar(object):
     def __init__(self, spinner: list[str], __str: str, speed=0.4, spinner_color = None) -> None:
