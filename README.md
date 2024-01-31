@@ -1,8 +1,9 @@
 <div align="center"> 
-    # Stone-Color
-    [Installation](#installation) - [Quick usage](#quick-usage) - [Docs](https://stone-color.readthedocs.io/en/latest/) - [Contributors](#contributors)
+    
+# Stone-Color
+[Installation](#installation) - [Quick usage](#quick-usage) - [Docs](https://stone-color.readthedocs.io/en/latest/) - [Contributors](#contributors)
 
-    <img src=".img/logo.png" width=60%>
+<img src=".img/logo.png" width=80%>
 </div>
 
 # Installation
