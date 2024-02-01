@@ -66,14 +66,3 @@ def unicode_heavy_table(header: list[str], data: list[list[str]], lspace=0, star
     table.write(ldiv + "╚" + "═" * (sum(col_widths) + len(col_widths) * 3 - 1) + "╝" + start_end)
 
     return table.getvalue()
-
-h = ["Name", "Surname"]
-d = [
-    ["Marco", "Togni"],
-    ["John", "Gates"],
-    ["Marcus", "Fresco"],
-]
-
-print(ascii_table(h, d))
-print(unicode_light_table(h, d))
-print(unicode_heavy_table(h, d))
