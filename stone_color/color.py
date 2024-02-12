@@ -14,14 +14,14 @@ def clegacy(color: int):
     return "\033[{}m".format(color)
 
 def ansistr(__str: str, color: int):
-    return cansi(color) + __str + cansi(0)
+    return cansi(color) + __str + clegacy(0)
 
 def legacy_ansistr(__str: str, color: int):
-    return clegacy(color) + __str + cansi(0)
+    return clegacy(color) + __str + clegacy(0)
 
 
 def hexstr(__str: str, hex: str):
-    return chex(hex) + __str + "\033[0m"
+    return chex(hex) + __str + clegacy(0)
 
 @dataclass
 class DefaultColors:
