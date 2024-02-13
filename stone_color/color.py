@@ -42,3 +42,14 @@ class DefaultColors:
     highcyan = cansi(14)
     white = cansi(15)
     reset = "\033[0m"
+
+@dataclass
+class DefaultLegacyColors:
+    black = clegacy(30)
+    red = clegacy(31)
+    green = clegacy(32)
+    yellow = clegacy(33)
+    blue = clegacy(34)
+    magenta = clegacy(35)
+    cyan = clegacy(36)
+    white = clegacy(37)
