@@ -20,6 +20,28 @@ Stone-color has a custom print function called: `printf`, and holds formatting a
 printf("{#98bf18}RGB colors{#reset}")
 ```
 
+The `#` symbol within the staples indicates an RGB color represented by a hexadecimal code or text style for example `{#underline}` or `{#98bf18}`.
+
+## Text style
+
+You can add a text style such as underline or bold, to do this you use the placeholder: `{#...}`.
+The various text styles are these: 
+
+On the left is the style flag, on the right is its ANSI value 
+
+```python
+ansi_style = {
+    "bold": "\033[1m",
+    "italic": "\033[3m",
+    "underline": "\033[4m",
+    "blink": "\033[5m",
+    "rapidblink": "\033[6m",
+    "strike": "\033[9m",
+    "invert": "\033[7m",
+    "reset": "\033[0m"
+}
+```
+
 ## Logging
 
 There are also logging functions that print in *stderr* the output 

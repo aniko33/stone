@@ -11,33 +11,33 @@ _info = colors.cyan + "[?]" + colors.reset
 _success = colors.green + "[+]" + colors.reset
 _error = colors.red + "[-]" + colors.reset 
 
+ansi_style = {
+    "bold": "\033[1m",
+    "italic": "\033[3m",
+    "underline": "\033[4m",
+    "blink": "\033[5m",
+    "rapidblink": "\033[6m",
+    "strike": "\033[9m",
+    "invert": "\033[7m",
+    "reset": "\033[0m"
+}
+
 auto_reset = False
 
 def alertf(*objs, end="\n", sep=" ", file=stderr, flush=False):
-    file.write(_alert + " " + sep.join(map(str, objs)) + end)
-    if flush:
-        file.flush()
+    printf(_alert, *objs, end=end, sep=sep, file=file, flush=flush)
 
 def warnf(*objs, end="\n", start="", sep=" ", file=stderr, flush=False):
-    file.write(start +_warn + " " + sep.join(map(str, objs)) + end)
-    if flush:
-        file.flush()
+    printf(start + _warn, *objs, end=end, sep=sep, file=file, flush=flush)
 
 def infof(*objs, end="\n", start="", sep=" ", file=stderr, flush=False):
-    file.write(start + _info + " " + sep.join(map(str, objs)) + end)
-    if flush:
-        file.flush()
+    printf(start + _info, *objs, end=end, sep=sep, file=file, flush=flush)
 
 def successf(*objs, end="\n", start="", sep=" ", file=stderr, flush=False):
-    file.write(start + _success + " " + sep.join(map(str, objs)) + end)
-    if flush:
-        file.flush()
+    printf(start + _success, *objs, end=end, sep=sep, file=file, flush=flush)
     
-
 def errorf(*objs, end="\n", start="", sep=" ", file=stderr, flush=False):
-    file.write(start + _error + " " + sep.join(map(str, objs)) + end)
-    if flush:
-        file.flush()
+    printf(start + _error, *objs, end=end, sep=sep, file=file, flush=flush)
 
 def printf(*objs, end="\n", sep=" ", file=stdout, flush=False):
     __text = sep.join(map(str, objs)) + end
@@ -45,8 +45,8 @@ def printf(*objs, end="\n", sep=" ", file=stdout, flush=False):
     def color_replace(match):
         hex = match.group(1)
 
-        if hex == "reset":
-            return "\033[0m"
+        if hex in ansi_style.keys():
+            return ansi_style[hex]
         else:
             return color.chex(hex)
 
