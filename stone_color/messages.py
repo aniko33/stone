@@ -42,15 +42,7 @@ def errorf(*objs, end="\n", start="", sep=" ", file=stderr, flush=False):
 def printf(*objs, end="\n", sep=" ", file=stdout, flush=False):
     __text = sep.join(map(str, objs)) + end
 
-    def color_replace(match):
-        hex = match.group(1)
-
-        if hex in ansi_style.keys():
-            return ansi_style[hex]
-        else:
-            return color.chex(hex)
-
-    __text = re.sub(r"\{#([^}]+)\}", color_replace, __text)
+    __text = formatf(__text)
     
     if auto_reset:
         __text += "\033[0m"
@@ -60,3 +52,17 @@ def printf(*objs, end="\n", sep=" ", file=stdout, flush=False):
     if flush:
         file.flush()
     
+def formatf(*objs, sep=" ") -> str:
+    __text = sep.join(map(str, objs))
+
+    def color_replace(match):
+        hex = match.group(1)
+
+        if hex in ansi_style.keys():
+            return ansi_style[hex]
+        else:
+            return color.chex(hex)
+
+    __text = re.sub(r"\{#([^}]+)\}", color_replace, __text)
+
+    return __text

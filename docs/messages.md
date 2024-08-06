@@ -12,12 +12,13 @@ successf("Success!")
 errorf("Error!")
 ```
 
-## Printing
+## Printing and formatting
 
-Stone-color has a custom print function called: `printf`, and holds formatting and coloring features, pratical use:
+Stone-color has a custom print/format function called: `printf`/`formatf`, and holds formatting and coloring features, pratical use:
 
 ```python
 printf("{#98bf18}RGB colors{#reset}")
+text = formatf("{#98bf18}RGB colors{#reset}")
 ```
 
 The `#` symbol within the staples indicates an RGB color represented by a hexadecimal code or text style for example `{#underline}` or `{#98bf18}`.
