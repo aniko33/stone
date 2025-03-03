@@ -10,9 +10,9 @@ class Spinners:
     mark_spinner = ["#", "!", "?", "$", "&"]
 
 class loadbar(object):
-    def __init__(self, spinner: list[str], __str: str, speed=0.4, spinner_color = None) -> None:
+    def __init__(self, spinner: list[str], _str: str, speed=0.4, spinner_color = None) -> None:
         self.spinner = spinner
-        self.text = __str
+        self.text = _str
         self.is_stopped = False
         self.speed = speed
         self.spinner_color = spinner_color

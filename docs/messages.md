@@ -67,7 +67,7 @@ warnf("Warn!")
 ```python
 infof("Info!")
 ```
-<pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080">[?] </span>Info!</pre>
+<pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080">[i] </span>Info!</pre>
 
 
 ### Success
